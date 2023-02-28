@@ -101,7 +101,94 @@ Install VC_redist and MySQL
 - During the installation of MySQL, modify the security settings to be able to create your own password.
   
 </p>
+
+<hr>
+
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Register PHP
+
+- Search for "IIS" on the Windows toolbar and right click to choose "Run as Administrator".
+- Click "PHP Manager" -> "Register new PHP version"
+- Go to the file destination by C:\PHP, and select "php-cgi"  
+- Open the selected file and click "OK.
+
 </p>
 
+<p>
+<img src="https://i.imgur.com/sZhm8xi.png" height="80%" width="80%" alt="register php"/>
+</p>
+
+<hr>
+
+<p>
+Install ostTicket
+  
+- Download and install "osTicketv1.15.8"
+- Open up the downloaded file and open another file explorer
+- On your newly opened file explorer, locate C:\inetpub\wwwroot
+- Drag the "upload" folder into wwwroot, and rename the folder from "upload" into "osticket"
+  
+</p>  
+
+<hr>
+
+<p>
+Enable Extensions
+  
+- Go to the IIS app
+- From there, go to "Sites" -> "Default" -> "osTicket" -> "PHP Manager" -> "Enable or Disable an Extension"
+- Enable "php_imap.dll", "php_intl.dll", and "php_opcache.dll"
+  
+</p>  
+
+<hr>
+
+<p>
+Open osTicket
+  
+- On IIS, click "Sites" -> "Default Web Site" -> "osTicket" -> "Browse *:80"
+- A web page of osTicket should pop up.
+</p>  
+<p>
+<img src="https://i.imgur.com/XfpExTT.png" height="80%" width="80%" alt="osticket page"/>
+</p>
+
+<hr>
+
+<p>
+Rename ost-config.php
+  
+- Go to the file destination: "C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php"
+- Right click on the "ost-config.php" file and click on "Property"
+- Then go to "Security" -> "Advanced" -> "Disable Inheritance" -> "Remove all Inherited properties from this item"  
+- Next, click on "Add" -> "Select a Principle"
+- Input "Everyone" onto the textbox and click "Check Names"
+- Apply the changes and click "OK"
+  
+</p>
+
+<hr>
+
+<p>
+Install HeidiSQL
+  
+- Download and install "HeidiSQL"
+- Once installed and opened, click on "New"
+- Create a username and password
+- Connect to a session and create a database named "osTicket"
+
+</p>
+
+<hr>
+
+<p>
+osTicket Setup in Browser  
+  
+- Switch to your browser, fill out all of the required details
+- For "MySQL database" set it to osTicket and "mySqL Username" to "root"
+- After the setup is done, the osTicket installation should be done.
+  
+</p>
+<p>
+<img src="https://i.imgur.com/jFBbyQS.png" height="80%" width="80%" alt="osTicket"/>
+</p>
