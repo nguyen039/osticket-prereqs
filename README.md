@@ -20,8 +20,6 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - Created a resource group on Azure
 - Created a Windows virtual machine
 - Logged into virtual machine with remote desktop
-- Item 4
-- Item 5
 
 <h2>Installation Steps</h2>
 
